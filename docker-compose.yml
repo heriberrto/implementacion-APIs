@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: licores
+    ports:
+      - 3606:3606
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:

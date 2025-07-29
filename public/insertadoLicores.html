@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de licores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3>Bienvenido a la tienda</h3>
+    <div class="formulario_inventario">
+        <form action="http://localhost:3000/api/products" method="POST">
+            <br>
+            <h1>licores</h1>
+            <br>
+            <input type="text" name="nombre_marca" id="nombre_marca" placeholder="marca de licor">
+            <br>
+            <br>
+            <input type="text" name="tipo_licor" id="tipo_licor" placeholder="tipo de licor">
+            <br>
+            <br>
+            <input type="text" name="material" id="material" placeholder="material">
+            <br>
+            <br>
+            <input type="text" name="precio" id="precio" placeholder="precio">
+            <br>
+            <br>
+            <input type="text" name="litros" id="litros" placeholder="contenido en litros">
+            <br>
+            <br>
+            <input type="text" name="cantidad" id="cantidad" placeholder="cantidad en inventario">
+            <br>
+            <br>
+            <button type="submit" id="submit">insertar</button>
+        </form>
+    </div>
+    <div class = "GET_inventario">
+        <form action="http://localhost:3000/api/products" method="GET">
+            <h1>Obtenga el inventario</h1>
+            <button type="submit" id="get">Obtener inventario</button>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de licores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3>Bienvenido a la tienda</h3>
+    <div class="formulario_despachos">
+        <form action="http://localhost:3000/api/despachos" method="POST">
+            <input type="text" name="nombre_del_cliente" id="nombre_del_cliente" placeholder="nombre del cliente">
+            <br>
+            <br>
+            <input type="text" name="direccion_del_cliente" id="direccion_del_cliente" placeholder="direccion">
+            <br>
+            <br>
+            <input type="text" name="nombre_del_licor" id="nombre_del_licor" placeholder="tipo de licor">
+            <br>
+            <br>
+            <button type="submit"  id="submit_despacho">subir despacho</button>
+        </form>
+    </div>
+    <div class="obtener_despachos">
+        <form action="http://localhost:3000/api/despachos" method="GET">
+            <br>
+            <button type="submit" id="obtencion_despachos">obtener despachos</button>
+        </form>
+    </div>
+
+    <div class="vender_despachos">
+        <form id="borrar_despacho">
+            <br>
+            <br>
+            <input type="text" name="id" id="campo_venta" placeholder="comprar por id">
+            <br>
+            <br>
+            <button type="submit" id="boton_borrar" class="btn btn-primary">comprar</button>
+        </form>
+    </div>
+
+
+    <script>
+    document.getElementById("boton_borrar").addEventListener("click", function (e) {
+    e.preventDefault(); 
+
+    const id = document.getElementById("campo_venta").value;
+
+    fetch(`http://localhost:3000/api/selling`, {
+        method: "DELETE",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({id:Number(id)})
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("No se pudo vender el despacho");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Despacho eliminado:", data);
+        alert("Despacho eliminado correctamente");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error al eliminar el despacho");
+    });
+});
+</script>
+
+</body>

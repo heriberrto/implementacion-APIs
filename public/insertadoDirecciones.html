@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de licores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3>Bienvenido a la tienda</h3>
+    <div class="formulario de direccion">
+        <form action="http://localhost:3000/api/direcciones" method="POST">
+            <h1>direcciones</h1>
+            <br>
+            <input type="text" name="calle" id="calle" placeholder="calle">
+            <br>
+            <br>
+            <input type="text" name="barrio" id="barrio" placeholder="barrio">
+            <br>
+            <br>
+            <input type="text" name="carrera" id="carrera" placeholder="carrera">
+            <br>
+            <br>
+            <input type="text" name="numeral" id="numeral" placeholder="numeral">
+            <br>
+            <br>
+            <button type="submit" id="submit">Insertar direccion</button>
+        </form>
+    </div>
+    <div class = "GET_direcciones">
+        <form action="http://localhost:3000/api/direcciones" method="GET">
+            <h1>Obtenga la lista de direcciones</h1>
+            <button type="submit" id="get">Obtener direccion</button>
+        </form>
+    </div>
+</body>

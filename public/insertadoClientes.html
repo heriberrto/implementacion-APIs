@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de licores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3>Bienvenido a la tienda</h3>
+    <div class="formulario inventario">
+        
+        <form action="http://localhost:3000/api/clientes" method="POST">
+            <input type="text" name="nombre" id="nombre" placeholder="nombre del cliente">
+            <button type="submit"  id="submit">Insertar nombre del cliente</button>
+        </form>
+        <div class = "GET_inventario">
+        <form action="http://localhost:3000/api/clientes" method="GET">
+            <h1>Obtenga la lista de clientes</h1>
+            <button type="submit" id="get">Obtener clientes</button>
+        </form>
+    </div>
+    </div>
+</body>
